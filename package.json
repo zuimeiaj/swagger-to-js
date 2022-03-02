@@ -1,6 +1,6 @@
 {
   "name": "yoo-swagger-api",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Generate JavaScript api based on swagger description",
   "main": "lib/index.js",
   "files": [
@@ -8,6 +8,10 @@
   ],
   "scripts": {
     "test": "node test/test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zuimeiaj/swagger-to-js.git"
   },
   "author": "zuimeiaj",
   "license": "MIT"
