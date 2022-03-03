@@ -7,11 +7,12 @@
 # 使用
 
 ```javascript
+// swagger.js 
 const path = require("path");
 const parseSwagger = require("yoo-swagger-api");
 
 const { generate, generateApi } = parseSwagger({
-  url: "http://swagger.xxxx/xxx/v2/api-docs",
+  url: "http://swagger.xxxx",// 这里会自动拼接上 /swagger-resources 
   module: "user",
   output: path.resolve(__dirname, "../api"),
   apiLibName: "HttpClient",
@@ -26,6 +27,9 @@ const { generate, generateApi } = parseSwagger({
 generate();
 // 生成单个api,需要传递 apiUrl和module，module时文件名
 generateApi();
+```
+```js
+node swagger.js
 ```
 
 ```javascript
