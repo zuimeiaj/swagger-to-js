@@ -1,13 +1,13 @@
 {
   "name": "yoo-swagger-api",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Generate JavaScript api based on swagger description",
   "main": "lib/index.js",
   "files": [
     "lib"
   ],
   "scripts": {
-    "test": "node test/test.js"
+    "test": "node test/index.js"
   },
   "repository": {
     "type": "git",

@@ -1,6 +1,6 @@
 # 开始
 
-根据 swaggerapi 文档生成请求代码，减少重复劳动
+根据 swaggerapi 文档生成请求代码和请求参数注释，减少重复劳动。支持 parameters 和 requestbody
 
 ` npm install yoo-swagger-api --save-dev`
 
@@ -10,7 +10,7 @@
 const path = require("path");
 const parseSwagger = require("yoo-swagger-api");
 
-parseSwagger({
+const { generate, generateApi } = parseSwagger({
   url: "http://swagger.xxxx/xxx/v2/api-docs",
   module: "user",
   output: path.resolve(__dirname, "../api"),
@@ -21,6 +21,11 @@ parseSwagger({
     delete: "remove",
   },
 });
+
+// 生成所有api，传递url，不用传apiUrl和module
+generate();
+// 生成单个api,需要传递 apiUrl和module，module时文件名
+generateApi();
 ```
 
 ```javascript
@@ -42,11 +47,13 @@ export function getDataList(data) {
 
 # 参数说明
 
-| Name       | Type   | Desc                             |
-| ---------- | ------ | -------------------------------- |
-| url        | string | swagger 文档路径                 |
-| output     | string | 写入文件目录                     |
-| module     | string | 写入文件名称                     |
-| apiLibName | string | 请求库名称                       |
-| apiLibPath | string | 请求库地址                       |
-| convert    | object | 对数据类型和请求 method 进行转换 |
+| Name       | Type   | Desc                               |
+| ---------- | ------ | ---------------------------------- |
+| url        | string | swagger 文档资源路径               |
+| apiUrl     | string | swagger 文档单个服务接口路径       |
+| output     | string | 写入文件目录                       |
+| module     | string | 文件名称，单个接口生成时有效       |
+| resource   | string | 资源路径，默认为 swagger-resources |
+| apiLibName | string | 请求库名称                         |
+| apiLibPath | string | 请求库地址                         |
+| convert    | object | 对数据类型和请求 method 进行转换   |
