@@ -1,6 +1,6 @@
 {
   "name": "swagger-jsservice-generator",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Generate JavaScript api based on swagger description",
   "main": "lib/index.js",
   "files": [
@@ -9,6 +9,10 @@
   "scripts": {
     "test": "node test/index.js"
   },
+  "keywords": [
+    "swagger",
+    "servicegenerator"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/zuimeiaj/swagger-to-js.git"
